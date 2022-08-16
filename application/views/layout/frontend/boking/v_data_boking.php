@@ -15,6 +15,7 @@
                                 <div class="visit">Nama Barang</div>
                                 <div class="country">Kerusakan</div>
                                 <div class="country">Hasil Diagnosa</div>
+                                <div class="country">Estimasi</div>
                                 <div class="country">Jumlah Pembayaran</div>
                                 <div class="percentage">Status Boking</div>
                             </div>
@@ -27,6 +28,7 @@
                                     <div class="visit"><?= $value->nama_barang ?></div>
                                     <div class="country"><?= $value->kerusakan_barang ?></div>
                                     <div class="country"><?= $value->catatan ?></div>
+                                    <div class="country"><?= $value->estimasi ?></div>
                                     <div class="country"><?= $value->harga_bayar ?></div>
                                     <div class="percentage">
                                         <?php if ($value->status_boking == 0) { ?>
@@ -35,7 +37,7 @@
                                             <span class="badge badge-warning">Diagnosa Keusakan</span>
                                         <?php } elseif ($value->status_boking == 3) { ?>
                                             <span class="badge badge-warning">Proses Perbaibaikan</span>
-                                            <a href="<?= base_url('boking/konfirmasiservis/' . $value->id_boking) ?>" type="submit" class="btn btn-success">Konfirmasi</a><br>
+                                            <a href="<?= base_url('boking/konfirmasiservis/' . $value->id_boking) ?>" type="submit" class="btn btn-success">Konfirmasi</a><br />
                                             <a href="<?= base_url('boking/batalservis/' . $value->id_boking) ?>" type="submit" class="btn btn-danger">Batalkan</a>
                                         <?php } elseif ($value->status_boking == 4) { ?>
                                             <span class="badge badge-danger">Silahkan Bayar</span>

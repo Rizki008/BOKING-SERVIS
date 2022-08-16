@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Des 2021 pada 02.50
--- Versi server: 10.4.13-MariaDB
--- Versi PHP: 7.4.8
+-- Waktu pembuatan: 16 Agu 2022 pada 11.25
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,20 +43,22 @@ CREATE TABLE `boking` (
   `atas_nama` varchar(128) DEFAULT NULL,
   `bukti_bayar` text DEFAULT NULL,
   `jumlah_bayar` int(30) DEFAULT NULL,
-  `catatan` varchar(128) DEFAULT NULL
+  `catatan` varchar(128) DEFAULT NULL,
+  `estimasi` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `boking`
 --
 
-INSERT INTO `boking` (`id_boking`, `no_boking`, `id_pelanggan`, `id_diskon`, `tgl_boking`, `nama_barang`, `tipe_barang`, `kerusakan_barang`, `harga_bayar`, `vocher`, `status_bayar`, `status_boking`, `atas_nama`, `bukti_bayar`, `jumlah_bayar`, `catatan`) VALUES
-(15, 20211217, 9, NULL, '2021-12-17', 'Laptop', 'asus', 'mati total', '12000', NULL, 1, 6, 'imam', 'Drawing2.jpg', NULL, 'ganti ram'),
-(16, 20211217, 9, NULL, '2021-12-17', 'Laptop', 'asus 123', 'os error', NULL, NULL, NULL, 8, NULL, NULL, NULL, 'harus ganti lcd '),
-(17, 20211221, 8, NULL, '2021-12-21', 'Laptop', 'asus', 'os error', NULL, NULL, NULL, 8, NULL, NULL, NULL, 'instal ulang windows'),
-(18, 20211221, 8, NULL, '2021-12-21', 'Laptop', 'asus', 'os error', '40000', NULL, 1, 6, 'imam', 'Beautiful_Green_Earth_Closeup.jpg', NULL, 'instal ulang windows'),
-(19, 20211221, 8, NULL, '2021-12-21', 'laptop ', 'asus 123', 'os error', '40000', NULL, 1, 6, 'maung', '2.jpg', NULL, 'ganti ram'),
-(20, 20211225, 8, NULL, '2021-12-25', 'Laptop', 'acer', 'layar retak', NULL, NULL, NULL, 8, NULL, NULL, NULL, 'ganti ram');
+INSERT INTO `boking` (`id_boking`, `no_boking`, `id_pelanggan`, `id_diskon`, `tgl_boking`, `nama_barang`, `tipe_barang`, `kerusakan_barang`, `harga_bayar`, `vocher`, `status_bayar`, `status_boking`, `atas_nama`, `bukti_bayar`, `jumlah_bayar`, `catatan`, `estimasi`) VALUES
+(15, 20211217, 9, NULL, '2021-12-17', 'Laptop', 'asus', 'mati total', '12000', NULL, 1, 6, 'imam', 'Drawing2.jpg', NULL, 'ganti ram', NULL),
+(16, 20211217, 9, NULL, '2021-12-17', 'Laptop', 'asus 123', 'os error', NULL, NULL, NULL, 8, NULL, NULL, NULL, 'harus ganti lcd ', NULL),
+(17, 20211221, 8, NULL, '2021-12-21', 'Laptop', 'asus', 'os error', NULL, NULL, NULL, 8, NULL, NULL, NULL, 'instal ulang windows', NULL),
+(18, 20211221, 8, NULL, '2021-12-21', 'Laptop', 'asus', 'os error', '40000', NULL, 1, 6, 'imam', 'Beautiful_Green_Earth_Closeup.jpg', NULL, 'instal ulang windows', NULL),
+(19, 20211221, 8, NULL, '2021-12-21', 'laptop ', 'asus 123', 'os error', '40000', NULL, 1, 6, 'maung', '2.jpg', NULL, 'ganti ram', NULL),
+(20, 20211225, 8, NULL, '2021-12-25', 'Laptop', 'acer', 'layar retak', NULL, NULL, NULL, 8, NULL, NULL, NULL, 'ganti ram', NULL),
+(21, 20220816, 1, NULL, '2022-08-16', 'asus', 'xz2123q', 'batre ancur bos', '120000', NULL, 1, 5, 'hana', 'logoadmin.png', NULL, 'ganti batre', '7 hari');
 
 -- --------------------------------------------------------
 
@@ -247,7 +249,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `boking`
 --
 ALTER TABLE `boking`
-  MODIFY `id_boking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_boking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `diagnosa`

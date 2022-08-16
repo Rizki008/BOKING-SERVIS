@@ -83,6 +83,11 @@
                             <th>:</th>
                             <td><input name="catatan" id="input-5" class="form-control" placeholder="Catatan" required></td>
                         </tr>
+                        <tr class="text-warning mb-0">
+                            <th>Estimasi Perbaikan</th>
+                            <th>:</th>
+                            <td><input type="text" class="form-control" name="estimasi" id="input-4" placeholder="Estimasi Perbaikan" required></td>
+                        </tr>
                     </table>
                 </div>
                 <div class="modal-footer justify-content-between">

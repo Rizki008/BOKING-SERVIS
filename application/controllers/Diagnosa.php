@@ -29,7 +29,8 @@ class Diagnosa extends CI_Controller
         $data = array(
             'id_boking' => $id_boking,
             'status_boking' => 3,
-            'catatan' => $this->input->post('catatan')
+            'catatan' => $this->input->post('catatan'),
+            'estimasi' => $this->input->post('estimasi')
         );
         $this->m_admin->update_boking($data);
         $this->session->set_flashdata('pesan', 'Diagnosa Di Update');
